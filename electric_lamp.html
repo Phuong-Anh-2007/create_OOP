@@ -7,9 +7,9 @@
     <title>Mô phỏng tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
 </head>
 <body style="text-align: center; font-size: 32px;">
-    <button onclick="onLight()" style=" font-size: 32px; " onmouseout="outp()" onmouseover="inp()" id="on">Turn on</button> 
+    <button onclick="light.connectToLamp(lamp.turnOn());" style=" font-size: 32px; "  id="on">Turn on</button> 
     <p id="light" style=" font-size: 32px; "></p>
-    <button onclick="offLight()" style=" font-size: 32px;" onmouseout="output()" onmouseover="input()" id="off">Turn off</button>
+    <button onclick="light.connectToLamp(lamp.turnOff());" style=" font-size: 32px;"  id="off">Turn off</button>
     
 </body>
 </html>

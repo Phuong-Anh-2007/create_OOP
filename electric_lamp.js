@@ -1,37 +1,33 @@
 class SwitchButton {
+    connectToLamp(lamp) {
+        if (lamp) {
+            document.getElementById('light').innerHTML='<img src="https://www.w3schools.com/js/pic_bulbon.gif">';
+        } else {
+            document.getElementById('light').innerHTML='<img src="https://www.w3schools.com/js/pic_bulboff.gif">';
+        }
+    }
+
+    switchOn() {
+        lamp.turnOn();
+    }
+
+    switchOff() {
+        lamp.turnOff();
+    }
+}
+
+class ElectricLamp {
     turnOn() {
-        return '<img src="https://www.w3schools.com/js/pic_bulbon.gif">'
+        return this.status=true;
     }
 
     turnOff() {
-        return '<img src="https://www.w3schools.com/js/pic_bulboff.gif">'
+        return this.status=false;
     }
-
 }
 
-let lamp = new SwitchButton();
-document.getElementById('light').innerHTML=lamp.turnOff();
 
-function onLight() {
-    document.getElementById('light').innerHTML= lamp.turnOn();
-}
+let lamp = new ElectricLamp();
+let light = new SwitchButton();
 
-function offLight() {
-    document.getElementById('light').innerHTML = lamp.turnOff();
-}
-
-function inp() {
-    document.getElementById('on').style.background = 'yellow';
-}
-
-function outp() {
-    document.getElementById('on').style.background = 'lightgrey';
-}
-
-function input() {
-    document.getElementById('off').style.background = 'yellow';
-}
-
-function output() {
-    document.getElementById('off').style.background = 'lightgrey';
-}
+light.connectToLamp(lamp.turnOff());
